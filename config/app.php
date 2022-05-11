@@ -163,7 +163,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Nathanmac\Utilities\Parser\ParserServiceProvider::class,
 
         /*
          * Package Service Providers...

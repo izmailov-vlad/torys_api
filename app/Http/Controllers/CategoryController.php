@@ -9,8 +9,6 @@ use Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Mockery\Exception;
-use Nathanmac\Utilities\Parser\Exceptions\ParserException;
-use Nathanmac\Utilities\Parser\Parser;
 use PhpParser\Node\Scalar\String_;
 use Ramsey\Collection\Collection;
 
