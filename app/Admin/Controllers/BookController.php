@@ -29,8 +29,10 @@ class BookController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('title', __('Title'));
         $grid->column('image', __('Image'));
+        $grid->column('description', __('Description'));
+        $grid->column('publish_year', __('Publish year'));
         $grid->column('author_id', __('Author id'));
-        $grid->column('comment_id', __('Comment id'));
+        $grid->column('series', __('Series'));
         $grid->column('book_url', __('Book url'));
         $grid->column('pages_count', __('Pages count'));
         $grid->column('created_at', __('Created at'));
@@ -53,7 +55,9 @@ class BookController extends AdminController
         $show->field('title', __('Title'));
         $show->field('author_id', __('Author id'));
         $show->field('image', __('Image'));
-        $show->field('comment_id', __('Comment id'));
+        $show->field('description', __('description'));
+        $show->field('publish_year', __('Publish year'));
+        $show->field('series', __('Series'));
         $show->field('book_url', __('Book url'));
         $show->field('pages_count', __('Pages count'));
         $show->field('created_at', __('Created at'));
@@ -73,7 +77,9 @@ class BookController extends AdminController
 
         $form->text('title', __('Title'));
         $form->number('author_id', __('Author id'));
-        $form->number('comment_id', __('Comment id'));
+        $form->text('description', __('description'));
+        $form->text('publish_year', __('Publish year'));
+        $form->text('series', __('Series'));
         $form->text('image', __('Image'));
         $form->text('book_url', __('Book url'));
         $form->number('pages_count', __('Pages count'));

@@ -30,6 +30,7 @@ class AuthorsController extends AdminController
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
         $grid->column('name', __('Name'));
+        $grid->column('image', __('Image'));
 
         return $grid;
     }
@@ -48,6 +49,7 @@ class AuthorsController extends AdminController
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
         $show->field('name', __('Name'));
+        $show->field('image', __('Image'));
 
         return $show;
     }
@@ -62,6 +64,7 @@ class AuthorsController extends AdminController
         $form = new Form(new Author());
 
         $form->text('name', __('Name'));
+        $form->text('image', __('Image'));
 
         return $form;
     }

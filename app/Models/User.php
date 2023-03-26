@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class   User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -42,7 +43,13 @@ class   User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function comments() {
-        return $this->hasMany(Comment::class, 'user_id', 'id');
+    public function favouriteBooks()
+    {
+        return $this->belongsToMany(Book::class, 'user_favourite', 'user_id', 'books_id');
+    }
+
+    public function rates()
+    {
+        return $this->belongsToMany(Book::class, 'user_rate', 'book_id', 'user_id');
     }
 }

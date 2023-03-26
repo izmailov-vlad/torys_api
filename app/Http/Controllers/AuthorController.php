@@ -11,9 +11,17 @@ class AuthorController extends Controller
 {
     public function getAuthors(): JsonResponse
     {
-        $data = Book::with('authors')->get();
-        $headers = [ 'Content-Type' => 'application/json; charset=utf-8' ];
-        dd($data);
-//        return response()->json($data,200, $headers, JSON_UNESCAPED_UNICODE);
+        $data = Author::all();
+        $headers = ['Content-Type' => 'application/json; charset=utf-8'];
+
+        return response()->json(['authors' => $data], 200, $headers, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function getBooksByAuthor($authorId): JsonResponse
+    {
+        $data = Author::with('books')->find($authorId)->books;
+        $headers = ['Content-Type' => 'application/json; charset=utf-8'];
+
+        return response()->json($data, 200, $headers, JSON_UNESCAPED_UNICODE);
     }
 }
